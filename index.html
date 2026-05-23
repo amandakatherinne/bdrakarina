@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dra. Ana Karina Assis — Otorrinolaringologista em Recife. Agende sua consulta pelo WhatsApp." />
+<title>Dra. Ana Karina Assis — Otorrinolaringologista</title>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TQYR35VGR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7TQYR35VGR');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet"></noscript>
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+    background: #FAF7F4;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: #FAF7F4;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    background: #FAF7F4;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.7s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .photo-wrap {
+    position: relative;
+    width: 100%;
+    height: 66vh;
+    overflow: hidden;
+  }
+
+  .photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+  }
+
+  .photo-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: linear-gradient(to bottom, transparent, #FAF7F4);
+  }
+
+  .content {
+    padding: 0 24px 60px;
+    position: relative;
+  }
+
+  .eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #9A6A58;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: #1A0F09;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .gold-line {
+    width: 40px;
+    height: 1.5px;
+    background: #C4A26A;
+    margin-bottom: 28px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 17px 20px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  .btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+  }
+
+  .btn:hover::after {
+    left: 160%;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .btn-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn-text {
+    flex: 1;
+    text-align: left;
+  }
+
+  .btn-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+    display: block;
+    line-height: 1.2;
+  }
+
+  .btn-sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.75);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .btn-arrow {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    flex-shrink: 0;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .btn-whatsapp {
+    background: linear-gradient(135deg, #25D366, #16A34A);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+  }
+
+  .btn-whatsapp:hover {
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.38);
+  }
+
+  .btn-review {
+    background: linear-gradient(135deg, #C4715A, #9E4E3A);
+    box-shadow: 0 4px 20px rgba(196, 113, 90, 0.28);
+  }
+
+  .btn-review:hover {
+    box-shadow: 0 8px 30px rgba(196, 113, 90, 0.42);
+  }
+
+  .btn-site {
+    background: #FFFFFF;
+    border: 1.5px solid #C4A26A;
+    box-shadow: 0 2px 12px rgba(196, 162, 106, 0.12);
+  }
+
+  .btn-site:hover {
+    box-shadow: 0 6px 24px rgba(196, 162, 106, 0.22);
+  }
+
+  .btn-site .btn-label {
+    color: #1A0F09;
+  }
+
+  .btn-site .btn-sub {
+    color: rgba(26, 15, 9, 0.55);
+  }
+
+  .btn-site .btn-arrow {
+    color: rgba(26, 15, 9, 0.55);
+  }
+
+  .btn-site .btn-icon {
+    background: rgba(196, 113, 90, 0.1);
+  }
+
+  .footer {
+    margin-top: 36px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: rgba(26, 15, 9, 0.3);
+    letter-spacing: 0.5px;
+  }
+
+  .footer-link {
+    color: #C4715A;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-link:hover {
+    opacity: 0.75;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="photo-wrap">
+    <img src="foto.jpg" alt="Dra. Ana Karina Assis — Otorrinolaringologista" loading="eager">
+  </div>
+
+  <div class="content">
+    <span class="eyebrow">Otorrinolaringologista</span>
+    <h1 class="name">Dra. Ana Karina Assis</h1>
+    <div class="gold-line"></div>
+
+    <div class="buttons">
+
+      <a href="https://wa.me/5581995803857?text=Ol%C3%A1!+Vim+do+Instagram+da+Dra.Karina+e+gostaria+de+marcar+uma+consulta." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Agendar consulta pelo WhatsApp" onclick="gtag('event','whatsapp_click',{event_category:'bio_link',event_label:'WhatsApp - Agendar Consulta'})">
+        <div class="btn-icon">
+          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.522 5.83L.057 23.157a.5.5 0 0 0 .615.612l5.428-1.453A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 0 1-5.031-1.37l-.36-.214-3.733.999 1.019-3.63-.236-.374A9.868 9.868 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1c5.468 0 9.9 4.433 9.9 9.9 0 5.468-4.432 9.9-9.9 9.9z"/>
+          </svg>
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">Agendar Consulta</span>
+          <span class="btn-sub">Resposta rápida</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <a href="https://g.page/r/CR_u9ss3ZUqQEBM/review" class="btn btn-review" target="_blank" rel="noopener noreferrer" aria-label="Avalie a sua consulta no Google" onclick="gtag('event','review_click',{event_category:'bio_link',event_label:'Google Review - Avalie sua consulta'})">
+        <div class="btn-icon">
+          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/>
+          </svg>
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">Avalie a sua consulta</span>
+          <span class="btn-sub">★★★★★</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <a href="https://draanakarinaassis.com.br/" class="btn btn-site" target="_blank" rel="noopener noreferrer" aria-label="Visitar site oficial da Dra. Ana Karina" onclick="gtag('event','site_click',{event_category:'bio_link',event_label:'Site Oficial'})">
+        <div class="btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C4715A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div class="btn-text">
+          <span class="btn-label">Site Oficial</span>
+          <span class="btn-sub">draanakarinaassis.com.br</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+    </div>
+
+    <p class="footer">desenvolvido por <a href="https://www.instagram.com/agencialogdigital/" target="_blank" rel="noopener noreferrer" class="footer-link">Log Digital</a></p>
+  </div>
+
+</div>
+</body>
+</html>
