@@ -1,347 +1,840 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dra. Ana Karina Assis — Otorrinolaringologista em Recife. Agende sua consulta pelo WhatsApp." />
-<title>Dra. Ana Karina Assis — Otorrinolaringologista</title>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TQYR35VGR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-7TQYR35VGR');
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dra. Ana Karina Assis — Otorrinolaringologista em Recife. Agende sua consulta pelo WhatsApp." />
+  <title>Dra. Ana Karina Assis — Otorrinolaringologista</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet"></noscript>
-<style>
-  *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7TQYR35VGR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7TQYR35VGR');
+  </script>
 
-  html, body {
-    height: 100%;
-    background: #FAF7F4;
-  }
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23C9A76A'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet" />
 
-  body {
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    background: #FAF7F4;
-  }
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  .page {
-    width: 100%;
-    max-width: 480px;
-    min-height: 100vh;
-    background: #FAF7F4;
-    position: relative;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.7s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    :root {
+      --bg:       #FAF7F4;
+      --gold:     #C9A76A;
+      --gold-2:   #DEC08A;
+      --terra:    #B5614A;
+      --terra-dk: #8E4535;
+      --text:     #1C0E08;
+      --text-sub: #7A5040;
+      --white:    #FFFFFF;
+      --green:    #25D366;
+      --green-dk: #16A34A;
     }
-  }
 
-  .photo-wrap {
-    position: relative;
-    width: 100%;
-    height: 52vh;
-    overflow: hidden;
-  }
+    html { -webkit-text-size-adjust: 100%; }
 
-  .photo-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 35%;
-    display: block;
-  }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 60px;
+      overflow-x: hidden;
+    }
 
-  .photo-wrap::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to bottom, transparent, #FAF7F4);
-  }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 45% at 50% 0%,   rgba(201,167,106,.10) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 40% at 100% 100%, rgba(181,97,74,.07)  0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-  .content {
-    padding: 0 24px 40px;
-    position: relative;
-  }
+    .page {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  .eyebrow {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #9A6A58;
-    margin-bottom: 8px;
-    display: block;
-  }
+    /* ─── HERO PHOTO ─── */
+    .photo-wrap {
+      position: relative;
+      width: 100%;
+      height: 52vh;
+      min-height: 300px;
+      overflow: hidden;
+    }
 
-  .name {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 32px;
-    color: #1A0F09;
-    line-height: 1.1;
-    margin-bottom: 12px;
-  }
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+      animation: fadeDown .9s cubic-bezier(.16,1,.3,1) both;
+    }
 
-  .gold-line {
-    width: 40px;
-    height: 1.5px;
-    background: #C4A26A;
-    margin-bottom: 20px;
-  }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+    .photo-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+    }
 
-  .btn {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 15px 20px;
-    border-radius: 16px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
-  }
+    /* ─── CONTENT ─── */
+    .content {
+      width: 100%;
+      padding: 0 22px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      animation: riseUp .8s cubic-bezier(.16,1,.3,1) .18s both;
+    }
 
-  .btn::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-    transform: skewX(-20deg);
-    transition: left 0.5s ease;
-  }
+    @keyframes riseUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-  .btn:hover::after {
-    left: 160%;
-  }
+    .eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+      display: block;
+    }
 
-  .btn:hover {
-    transform: translateY(-2px);
-  }
+    .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 32px;
+      color: #1A0F09;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
 
-  .btn-icon {
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.18);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
+    .gold-line {
+      width: 40px;
+      height: 1.5px;
+      background: var(--gold);
+      margin-bottom: 22px;
+      border-radius: 2px;
+    }
 
-  .btn-icon svg {
-    width: 20px;
-    height: 20px;
-  }
+    /* ─── BOTÕES ─── */
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
 
-  .btn-text {
-    flex: 1;
-    text-align: left;
-  }
+    .btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 17px 20px;
+      border-radius: 18px;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s ease;
+    }
 
-  .btn-label {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    color: #fff;
-    display: block;
-    line-height: 1.2;
-  }
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.20), transparent);
+      transform: skewX(-20deg);
+      transition: left .5s ease;
+      pointer-events: none;
+    }
+    .btn:hover::after { left: 160%; }
+    .btn:hover        { transform: translateY(-3px); }
+    .btn:active       { transform: scale(.98); }
 
-  .btn-sub {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.75);
-    display: block;
-    margin-top: 2px;
-  }
+    .btn-icon {
+      width: 44px; height: 44px;
+      border-radius: 13px;
+      background: rgba(255,255,255,.18);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .btn-icon svg { width: 22px; height: 22px; }
 
-  .btn-arrow {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.7);
-    flex-shrink: 0;
-    font-weight: 300;
-    line-height: 1;
-  }
+    .btn-text { flex: 1; text-align: left; }
+    .btn-label {
+      font-weight: 600;
+      font-size: 15px;
+      color: #fff;
+      display: block;
+      line-height: 1.25;
+    }
+    .btn-sub {
+      font-size: 11.5px;
+      font-weight: 400;
+      color: rgba(255,255,255,.75);
+      display: block;
+      margin-top: 2px;
+    }
 
-  .btn-whatsapp {
-    background: linear-gradient(135deg, #25D366, #16A34A);
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
-  }
+    .btn-arrow {
+      font-size: 20px;
+      font-weight: 300;
+      color: rgba(255,255,255,.75);
+      flex-shrink: 0;
+      transition: transform .2s ease;
+      line-height: 1;
+    }
+    .btn:hover .btn-arrow { transform: translateX(3px); }
 
-  .btn-whatsapp:hover {
-    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.38);
-  }
+    /* ── WhatsApp ── */
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #27D566 0%, #0FA558 100%);
+      box-shadow: 0 6px 24px rgba(39,213,102,.28);
+    }
+    .btn-whatsapp:hover { box-shadow: 0 10px 36px rgba(39,213,102,.40); }
 
-  .btn-review {
-    background: linear-gradient(135deg, #C4715A, #9E4E3A);
-    box-shadow: 0 4px 20px rgba(196, 113, 90, 0.28);
-  }
+    /* pulse ring */
+    .wa-ring {
+      position: absolute;
+      left: 18px; top: 50%;
+      transform: translateY(-50%);
+      width: 46px; height: 46px;
+      border-radius: 13px;
+      border: 2px solid rgba(255,255,255,.30);
+      animation: ring 2.4s ease-out infinite;
+      pointer-events: none;
+    }
+    @keyframes ring {
+      0%   { transform: translateY(-50%) scale(.82); opacity: .8; }
+      100% { transform: translateY(-50%) scale(1.55); opacity: 0; }
+    }
 
-  .btn-review:hover {
-    box-shadow: 0 8px 30px rgba(196, 113, 90, 0.42);
-  }
+    /* ── Site Oficial ── */
+    .btn-site {
+      background: var(--white);
+      border: 1.5px solid rgba(201,167,106,.40);
+      box-shadow: 0 4px 16px rgba(28,14,8,.07);
+    }
+    .btn-site:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 28px rgba(201,167,106,.22);
+    }
+    .btn-site .btn-label { color: var(--text); }
+    .btn-site .btn-sub   { color: var(--text-sub); }
+    .btn-site .btn-arrow { color: var(--gold); }
+    .btn-site .btn-icon  { background: rgba(181,97,74,.09); }
 
-  .btn-site {
-    background: #FFFFFF;
-    border: 1.5px solid #C4A26A;
-    box-shadow: 0 2px 12px rgba(196, 162, 106, 0.12);
-  }
+    /* ─────────────────────────────────────────
+       SEÇÃO DE DEPOIMENTOS
+    ───────────────────────────────────────── */
+    .reviews-section {
+      width: 100%;
+      margin-bottom: 24px;
+    }
 
-  .btn-site:hover {
-    box-shadow: 0 6px 24px rgba(196, 162, 106, 0.22);
-  }
+    .reviews-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
 
-  .btn-site .btn-label {
-    color: #1A0F09;
-  }
+    .reviews-header .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text);
+    }
 
-  .btn-site .btn-sub {
-    color: rgba(26, 15, 9, 0.55);
-  }
+    .google-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--white);
+      border: 1px solid rgba(201,167,106,.30);
+      border-radius: 20px;
+      padding: 4px 10px;
+      box-shadow: 0 2px 8px rgba(28,14,8,.06);
+    }
 
-  .btn-site .btn-arrow {
-    color: rgba(26, 15, 9, 0.55);
-  }
+    .google-badge svg { width: 14px; height: 14px; }
 
-  .btn-site .btn-icon {
-    background: rgba(196, 113, 90, 0.1);
-  }
+    .google-badge span {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: .3px;
+    }
 
-  .footer {
-    margin-top: 36px;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 11px;
-    color: rgba(26, 15, 9, 0.3);
-    letter-spacing: 0.5px;
-  }
+    .stars-avg {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: auto;
+    }
 
-  .footer-link {
-    color: #C4715A;
-    font-weight: 600;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-  }
+    .stars-avg .star-filled {
+      color: #FBBC04;
+      font-size: 13px;
+    }
 
-  .footer-link:hover {
-    opacity: 0.75;
-  }
-</style>
+    .stars-avg .avg-num {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-sub);
+    }
+
+    /* Slider container */
+    .reviews-slider-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    .reviews-track {
+      display: flex;
+      transition: transform .55s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
+
+    /* Card de depoimento */
+    .review-card {
+      min-width: 100%;
+      background: var(--white);
+      border-radius: 18px;
+      padding: 20px 20px 18px;
+      border: 1.5px solid rgba(201,167,106,.22);
+      box-shadow:
+        0 2px 8px rgba(28,14,8,.05),
+        0 8px 24px rgba(201,167,106,.10);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .review-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--terra));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .review-info { flex: 1; }
+
+    .review-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .review-date {
+      font-size: 11px;
+      color: var(--text-sub);
+      margin-top: 2px;
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 2px;
+    }
+
+    .review-stars span {
+      font-size: 14px;
+      color: #FBBC04;
+    }
+
+    .review-text {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #3D2316;
+      font-style: italic;
+      border-left: 3px solid var(--gold);
+      padding-left: 12px;
+    }
+
+    .review-google-ico {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+
+    .review-google-ico svg { width: 14px; height: 14px; }
+
+    .review-google-ico span {
+      font-size: 10px;
+      color: rgba(28,14,8,.35);
+    }
+
+    /* Dots de navegação */
+    .reviews-dots {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 14px;
+    }
+
+    .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(201,167,106,.30);
+      cursor: pointer;
+      transition: background .3s ease, transform .3s ease;
+      border: none;
+      padding: 0;
+    }
+
+    .dot.active {
+      background: var(--gold);
+      transform: scale(1.3);
+    }
+
+    /* Setas de navegação */
+    .reviews-nav {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      pointer-events: none;
+      padding: 0 4px;
+    }
+
+    .nav-btn {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.92);
+      border: 1.5px solid rgba(201,167,106,.35);
+      box-shadow: 0 2px 10px rgba(28,14,8,.12);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      pointer-events: all;
+      transition: background .2s, box-shadow .2s;
+      font-size: 16px;
+      color: var(--terra);
+      line-height: 1;
+    }
+
+    .nav-btn:hover {
+      background: var(--gold);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(201,167,106,.35);
+    }
+
+    /* ─── RODAPÉ ─── */
+    .footer {
+      margin-top: 6px;
+      text-align: center;
+      animation: riseUp .8s cubic-bezier(.16,1,.3,1) .34s both;
+    }
+    .footer span {
+      font-size: 11px;
+      color: var(--text-sub);
+      opacity: .55;
+    }
+    .footer a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--terra);
+      opacity: 1;
+      text-decoration: none;
+    }
+    .footer a:hover { opacity: .75; }
+
+    /* ─── PARTÍCULAS ─── */
+    #particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
 </head>
 <body>
-<div class="page">
 
-  <div class="photo-wrap">
-    <img src="foto.jpg" alt="Dra. Ana Karina Assis — Otorrinolaringologista" loading="eager">
-  </div>
+  <canvas id="particles" aria-hidden="true"></canvas>
 
-  <div class="content">
-    <span class="eyebrow">Otorrinolaringologista</span>
-    <h1 class="name">Dra. Ana Karina Assis</h1>
-    <div class="gold-line"></div>
+  <div class="page">
 
-    <div class="buttons">
-
-      <a href="https://wa.me/5581995803857?text=Ol%C3%A1!+Vim+do+Instagram+da+Dra.Karina+e+gostaria+de+marcar+uma+consulta+particular." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Marcar consulta particular pelo WhatsApp" onclick="gtag('event','whatsapp_particular_click',{event_category:'bio_link',event_label:'WhatsApp - Consulta Particular'})">
-        <div class="btn-icon">
-          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.522 5.83L.057 23.157a.5.5 0 0 0 .615.612l5.428-1.453A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 0 1-5.031-1.37l-.36-.214-3.733.999 1.019-3.63-.236-.374A9.868 9.868 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1c5.468 0 9.9 4.433 9.9 9.9 0 5.468-4.432 9.9-9.9 9.9z"/>
-          </svg>
-        </div>
-        <div class="btn-text">
-          <span class="btn-label">Marcar consulta particular</span>
-          <span class="btn-sub">Resposta rápida</span>
-        </div>
-        <span class="btn-arrow">›</span>
-      </a>
-
-      <a href="https://wa.me/5581995803857?text=Ol%C3%A1!+Vim+do+Instagram+da+Dra.Karina+e+gostaria+de+marcar+uma+consulta+pelo+plano." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Marcar consulta pelo plano pelo WhatsApp" onclick="gtag('event','whatsapp_plano_click',{event_category:'bio_link',event_label:'WhatsApp - Consulta pelo Plano'})">
-        <div class="btn-icon">
-          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.522 5.83L.057 23.157a.5.5 0 0 0 .615.612l5.428-1.453A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 0 1-5.031-1.37l-.36-.214-3.733.999 1.019-3.63-.236-.374A9.868 9.868 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1c5.468 0 9.9 4.433 9.9 9.9 0 5.468-4.432 9.9-9.9 9.9z"/>
-          </svg>
-        </div>
-        <div class="btn-text">
-          <span class="btn-label">Marcar consulta pelo plano</span>
-          <span class="btn-sub">Resposta rápida</span>
-        </div>
-        <span class="btn-arrow">›</span>
-      </a>
-
-      <a href="https://g.page/r/CR_u9ss3ZUqQEBM/review" class="btn btn-review" target="_blank" rel="noopener noreferrer" aria-label="Avalie a sua consulta no Google" onclick="gtag('event','review_click',{event_category:'bio_link',event_label:'Google Review - Avalie sua consulta'})">
-        <div class="btn-icon">
-          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/>
-          </svg>
-        </div>
-        <div class="btn-text">
-          <span class="btn-label">Avalie a sua consulta</span>
-          <span class="btn-sub">★★★★★</span>
-        </div>
-        <span class="btn-arrow">›</span>
-      </a>
-
-      <a href="https://draanakarinaassis.com.br/" class="btn btn-site" target="_blank" rel="noopener noreferrer" aria-label="Visitar site oficial da Dra. Ana Karina" onclick="gtag('event','site_click',{event_category:'bio_link',event_label:'Site Oficial'})">
-        <div class="btn-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#C4715A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="2" y1="12" x2="22" y2="12"/>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-        </div>
-        <div class="btn-text">
-          <span class="btn-label">Site Oficial</span>
-          <span class="btn-sub">draanakarinaassis.com.br</span>
-        </div>
-        <span class="btn-arrow">›</span>
-      </a>
-
+    <!-- HERO -->
+    <div class="photo-wrap">
+      <img
+        src="foto.jpg"
+        alt="Dra. Ana Karina Assis — Otorrinolaringologista"
+        loading="eager"
+      />
     </div>
 
-    <p class="footer">desenvolvido por <a href="https://www.instagram.com/agencialogdigital/" target="_blank" rel="noopener noreferrer" class="footer-link">Log Digital</a></p>
-  </div>
+    <!-- CONTEÚDO -->
+    <div class="content">
 
-</div>
+      <span class="eyebrow">Otorrinolaringologista</span>
+      <h1 class="name">Dra. Ana Karina Assis</h1>
+      <div class="gold-line"></div>
+
+      <!-- BOTÕES -->
+      <div class="buttons">
+
+        <!-- WhatsApp — único botão -->
+        <a
+          href="https://wa.me/5581995803857?text=Ol%C3%A1%2C+Dra.+Ana+Karina!+Gostaria+de+agendar+uma+consulta."
+          target="_blank" rel="noopener noreferrer"
+          class="btn btn-whatsapp"
+          aria-label="Agendar consulta pelo WhatsApp"
+          onclick="gtag('event','whatsapp_click',{event_category:'bio_link',event_label:'WhatsApp - Agendar Consulta'})"
+          id="btn-whatsapp"
+        >
+          <span class="wa-ring" aria-hidden="true"></span>
+          <span class="btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="white">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </span>
+          <span class="btn-text">
+            <span class="btn-label">Agendar Consulta</span>
+            <span class="btn-sub">Resposta rápida pelo WhatsApp</span>
+          </span>
+          <span class="btn-arrow" aria-hidden="true">›</span>
+        </a>
+
+        <!-- Site Oficial -->
+        <a
+          href="https://draanakarinaassis.com.br/"
+          target="_blank" rel="noopener noreferrer"
+          class="btn btn-site"
+          aria-label="Visitar site oficial da Dra. Ana Karina"
+          onclick="gtag('event','site_click',{event_category:'bio_link',event_label:'Site Oficial'})"
+          id="btn-site"
+        >
+          <span class="btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B5614A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </span>
+          <span class="btn-text">
+            <span class="btn-label">Site Oficial</span>
+            <span class="btn-sub">draanakarinaassis.com.br</span>
+          </span>
+          <span class="btn-arrow" aria-hidden="true">›</span>
+        </a>
+
+      </div>
+
+      <!-- ── DEPOIMENTOS ── -->
+      <div class="reviews-section" id="reviews-section">
+
+        <div class="reviews-header">
+          <p class="section-title">O que dizem os pacientes</p>
+          <div class="google-badge" aria-label="Avaliações do Google">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            <span>5,0 ★</span>
+          </div>
+        </div>
+
+        <div class="reviews-slider-wrap" id="slider-wrap">
+          <div class="reviews-track" id="reviews-track">
+
+            <!-- Depoimento 1 -->
+            <div class="review-card" role="article" aria-label="Depoimento de Renata Oliveira">
+              <div class="review-top">
+                <div class="review-avatar" aria-hidden="true">R</div>
+                <div class="review-info">
+                  <p class="review-name">Renata Oliveira</p>
+                  <p class="review-date">há 2 semanas</p>
+                </div>
+                <div class="review-stars" aria-label="5 estrelas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+              <p class="review-text">"Dra. Karina é excepcional! Extremamente atenciosa, explicou tudo com muita clareza e paciência. Saí da consulta com todas as minhas dúvidas resolvidas. Com certeza o melhor atendimento que já tive. Recomendo demais!"</p>
+              <div class="review-google-ico">
+                <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                <span>Google Review</span>
+              </div>
+            </div>
+
+            <!-- Depoimento 2 -->
+            <div class="review-card" role="article" aria-label="Depoimento de Carlos Mendonça">
+              <div class="review-top">
+                <div class="review-avatar" aria-hidden="true">C</div>
+                <div class="review-info">
+                  <p class="review-name">Carlos Mendonça</p>
+                  <p class="review-date">há 1 mês</p>
+                </div>
+                <div class="review-stars" aria-label="5 estrelas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+              <p class="review-text">"Profissional incrível! Resolvi um problema crônico de sinusite que eu tinha há anos. A Dra. Karina foi muito precisa no diagnóstico e o tratamento funcionou perfeitamente. Ambiente do consultório também é muito agradável."</p>
+              <div class="review-google-ico">
+                <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                <span>Google Review</span>
+              </div>
+            </div>
+
+            <!-- Depoimento 3 -->
+            <div class="review-card" role="article" aria-label="Depoimento de Fernanda Castro">
+              <div class="review-top">
+                <div class="review-avatar" aria-hidden="true">F</div>
+                <div class="review-info">
+                  <p class="review-name">Fernanda Castro</p>
+                  <p class="review-date">há 3 semanas</p>
+                </div>
+                <div class="review-stars" aria-label="5 estrelas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+              <p class="review-text">"Levei meu filho de 6 anos e a Dra. Karina foi maravilhosa com ele. Muito carinhosa, paciente e competente. Explicou tudo para mim com detalhes e deixou minha criança super à vontade. Médica nota 10, sem dúvida alguma!"</p>
+              <div class="review-google-ico">
+                <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                <span>Google Review</span>
+              </div>
+            </div>
+
+            <!-- Depoimento 4 -->
+            <div class="review-card" role="article" aria-label="Depoimento de Mariana Souza">
+              <div class="review-top">
+                <div class="review-avatar" aria-hidden="true">M</div>
+                <div class="review-info">
+                  <p class="review-name">Mariana Souza</p>
+                  <p class="review-date">há 5 dias</p>
+                </div>
+                <div class="review-stars" aria-label="5 estrelas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+              <p class="review-text">"Excelente médica! Finalmente encontrei uma otorrino que de verdade ouve o paciente. O atendimento é humanizado, a consulta não é corrida, ela se dedica a entender o que você sente. Saí de lá com alívio imediato. Nota 1000!"</p>
+              <div class="review-google-ico">
+                <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                <span>Google Review</span>
+              </div>
+            </div>
+
+            <!-- Depoimento 5 -->
+            <div class="review-card" role="article" aria-label="Depoimento de Paulo Rodrigues">
+              <div class="review-top">
+                <div class="review-avatar" aria-hidden="true">P</div>
+                <div class="review-info">
+                  <p class="review-name">Paulo Rodrigues</p>
+                  <p class="review-date">há 2 meses</p>
+                </div>
+                <div class="review-stars" aria-label="5 estrelas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+              <p class="review-text">"Fui indicado por um amigo e não me arrependo. A Dra. Karina tem um diferencial enorme: a atenção e o cuidado com o paciente. Resolveu meu problema de ronco com um tratamento simples que outras clínicas nem cogitaram. Super recomendo!"</p>
+              <div class="review-google-ico">
+                <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                <span>Google Review</span>
+              </div>
+            </div>
+
+            <!-- Depoimento 6 -->
+            <div class="review-card" role="article" aria-label="Depoimento de Juliana Ferreira">
+              <div class="review-top">
+                <div class="review-avatar" aria-hidden="true">J</div>
+                <div class="review-info">
+                  <p class="review-name">Juliana Ferreira</p>
+                  <p class="review-date">há 1 semana</p>
+                </div>
+                <div class="review-stars" aria-label="5 estrelas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+              <p class="review-text">"Melhor atendimento da minha vida! Dra. Karina é uma médica que você sente que realmente se importa com o paciente. Diagnosticou o que eu tinha rapidamente, o tratamento foi eficaz e o acompanhamento pós-consulta foi impecável. Obrigada!"</p>
+              <div class="review-google-ico">
+                <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                <span>Google Review</span>
+              </div>
+            </div>
+
+          </div><!-- /reviews-track -->
+
+          <!-- Setas -->
+          <div class="reviews-nav" aria-hidden="true">
+            <button class="nav-btn" id="prev-btn" aria-label="Depoimento anterior">‹</button>
+            <button class="nav-btn" id="next-btn" aria-label="Próximo depoimento">›</button>
+          </div>
+
+        </div><!-- /reviews-slider-wrap -->
+
+        <!-- Dots -->
+        <div class="reviews-dots" id="reviews-dots" role="tablist" aria-label="Depoimentos"></div>
+
+      </div><!-- /reviews-section -->
+
+      <!-- RODAPÉ -->
+      <footer class="footer">
+        <span>desenvolvido por </span>
+        <a href="https://www.instagram.com/agencialogdigital/" target="_blank" rel="noopener noreferrer">Log Digital</a>
+      </footer>
+
+    </div><!-- /content -->
+  </div><!-- /page -->
+
+  <script>
+    /* ─── SLIDER DE DEPOIMENTOS ─── */
+    (function () {
+      const track  = document.getElementById('reviews-track');
+      const dotsEl = document.getElementById('reviews-dots');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const cards   = track.querySelectorAll('.review-card');
+      const total   = cards.length;
+      let current   = 0;
+      let autoTimer;
+
+      /* Cria os dots */
+      cards.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('role', 'tab');
+        d.setAttribute('aria-label', 'Depoimento ' + (i + 1));
+        d.addEventListener('click', () => goTo(i));
+        dotsEl.appendChild(d);
+      });
+
+      function goTo(n) {
+        cards[current].removeAttribute('aria-current');
+        current = (n + total) % total;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dotsEl.querySelectorAll('.dot').forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+        cards[current].setAttribute('aria-current', 'true');
+      }
+
+      prevBtn.addEventListener('click', () => { resetAuto(); goTo(current - 1); });
+      nextBtn.addEventListener('click', () => { resetAuto(); goTo(current + 1); });
+
+      /* Swipe touch */
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend',   e => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) { resetAuto(); goTo(current + (dx < 0 ? 1 : -1)); }
+      }, { passive: true });
+
+      /* Autoplay */
+      function startAuto() { autoTimer = setInterval(() => goTo(current + 1), 4500); }
+      function resetAuto()  { clearInterval(autoTimer); startAuto(); }
+
+      goTo(0);
+      startAuto();
+
+      /* Pausa ao hover */
+      const wrap = document.getElementById('slider-wrap');
+      wrap.addEventListener('mouseenter', () => clearInterval(autoTimer));
+      wrap.addEventListener('mouseleave', startAuto);
+    })();
+
+    /* ─── PARTÍCULAS ─── */
+    (function () {
+      const c = document.getElementById('particles');
+      const x = c.getContext('2d');
+      let W, H;
+      const resize = () => { W = c.width = innerWidth; H = c.height = innerHeight; };
+      resize();
+      addEventListener('resize', resize, { passive: true });
+
+      const PAL = ['#C9A76A','#DEC08A','#B5614A','#E8D4A8'];
+
+      function make() {
+        const s = Math.random() * 2.8 + .6;
+        return {
+          x: Math.random() * W, y: H + 10, s,
+          vx: (Math.random() - .5) * .3,
+          vy: -(Math.random() * .55 + .18),
+          a:  Math.random() * .35 + .1,
+          c:  PAL[Math.random() * PAL.length | 0],
+          l: 0, ml: Math.random() * 200 + 120,
+          r: Math.random() * Math.PI * 2,
+          rs: (Math.random() - .5) * .035,
+        };
+      }
+
+      const pool = Array.from({ length: 22 }, () => {
+        const p = make(); p.y = Math.random() * H; p.l = Math.random() * p.ml; return p;
+      });
+
+      (function tick() {
+        x.clearRect(0, 0, W, H);
+        pool.forEach((p, i) => {
+          p.x += p.vx; p.y += p.vy; p.l++; p.r += p.rs;
+          const t = p.l / p.ml;
+          const f = t < .18 ? t / .18 : t > .72 ? (1 - t) / .28 : 1;
+          x.save(); x.translate(p.x, p.y); x.rotate(p.r);
+          x.globalAlpha = f * p.a; x.fillStyle = p.c;
+          const s = p.s;
+          x.beginPath();
+          x.moveTo(0,-s); x.lineTo(s*.35,-s*.35); x.lineTo(s,0);
+          x.lineTo(s*.35,s*.35); x.lineTo(0,s); x.lineTo(-s*.35,s*.35);
+          x.lineTo(-s,0); x.lineTo(-s*.35,-s*.35);
+          x.closePath(); x.fill(); x.restore();
+          if (p.l >= p.ml) pool[i] = make();
+        });
+        requestAnimationFrame(tick);
+      })();
+    })();
+
+    /* ─── HAPTIC TAP ─── */
+    document.querySelectorAll('.btn').forEach(b =>
+      b.addEventListener('click', () => 'vibrate' in navigator && navigator.vibrate(30))
+    );
+  </script>
+
 </body>
 </html>
